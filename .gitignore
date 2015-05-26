@@ -1,0 +1,9 @@
+# SSHFS Garbages
+._*
+
+# OS Level Garbages
+.DS_Store
+
+# Cabal Level Garbages
+**/.cabal-sandbox
+cabal.sandbox.config
