@@ -1,5 +1,6 @@
 # SSHFS Garbages
 ._*
+.fuse*
 
 # OS Level Garbages
 .DS_Store
