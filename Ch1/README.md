@@ -13,6 +13,6 @@ Calculate the smallest natural number not in a given finite set X of natural num
 m == b - a = minfrom b (n - m, vs)
 ```
 
-This is to say, if length of the left list equal to `mid - lo`, then every element of $[lo, mid$ exists in the left list.
+This is to say, if length of the left list equal to `mid - lo`, then every element of `[lo, mid]` exists in the left list.
 
-My `v1.hs` version doesn’t take this advantage and thus has an $O(n\log{}n)$ time complexity. In the worst scenario, namely the smallest absent number is $n - 1$ where n is the length of the input list, the execution path of my algorithm is similar to that of [Quicksort](http://en.wikipedia.org/wiki/Quicksort).
+My `v1.hs` version doesn’t take this advantage and thus has an $O(n\log{}n)$ time complexity. In the worst scenario, namely the smallest absent number is `n - 1` where n is the length of the input list, the execution path of my algorithm is similar to that of [Quicksort](http://en.wikipedia.org/wiki/Quicksort).
