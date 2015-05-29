@@ -5,8 +5,8 @@ Calculate the maximum surpasser count of a list.
 - `v1.hs`: an $O(n\log{}n)$ solution using a D&C algorithm on _Pearls_
 
 ## Notes
-The approach used in _Pearls_ is not hard. First, the author attempted to find
-a linear `join` that satisfies:
+The approach to find this D&C algorithm is not hard. First, the author
+attempted to find a linear `join` function that satisfies:
 
 ```Haskell
 table (xs ++ ys) = join (table xs) (table ys)
@@ -19,7 +19,7 @@ join txs tys = [(z, c + tcount z tys) | (z, c) <- txs] ++ tys
 tcount z tys = scount z (map fst tys)
 ```
 
-, which is not a linear time function.
+, which is unfortunately not a linear time function.
 
 Then, the author observed that we could improve `tcount` as long as `tys` is
 sorted:
@@ -41,6 +41,6 @@ join n xs@((x, c):xs') ys@((y, d):ys')
              in   (y, d):rest
 ```
 
-To me, the argument for that sorted `table` is better is not very convincing.
-But the rest deduction in this chapter gave me some pretty awesome hints about
-how people design and optimize an algorithm.
+To me, the argument for that keeping `table` sorted is better is not very
+convincing. But I think the rest deduction in this chapter is pretty good, as it
+perfectly exemplified how people generally design and optimize an algorithm.
