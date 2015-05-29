@@ -1,4 +1,4 @@
-# Minfree
+# The Smallest Free Number
 Calculate the smallest natural number not in a given finite set X of natural numbers.
 
 - `v0.hs`: the specification
