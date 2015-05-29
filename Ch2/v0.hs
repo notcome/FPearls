@@ -1,8 +1,10 @@
-count :: Ord a => [a] -> Int
-count []     = error "Surpasser count of an empty list is undefined."
-count (x:xs) = length $ filter (>x) xs
+tails :: [a] -> [[a]]
+tails []     = []
+tails (x:xs) = (x:xs):tails xs
+
+scount :: Ord a => [a] -> Int
+scount []     = error "Surpasser count of an empty list is undefined."
+scount (x:xs) = length $ filter (>x) xs
 
 msc :: Ord a => [a] -> Int
-msc l = let len = length l
-            xpd = take len $ iterate tail l
-        in maximum $ map count xpd
+msc = maximum . map scount . tails
